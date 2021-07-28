@@ -1,0 +1,145 @@
+body * {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #354152;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+header {
+    width: 95%;
+    margin: auto;
+    color: #7e8ba3;
+}
+
+main {
+    width: 95%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+}
+
+.drag-area {
+    border: 2px dashed #fff;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 500px;
+}
+
+.drag-area .icon {
+    font-size: 50px;
+    color: #fff;
+    margin-top: 20px;
+}
+
+.drag-area h3 {
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.drag-area span {
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    margin: 10px 0 15px 0;
+}
+
+.drag-area button {
+    padding: 10px 25px;
+    font-size: 10px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    background-image: linear-gradient(to right, rgb(3, 252, 136), rgb(2, 122, 90));
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.drag-area img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+}
+
+.container-form {
+    max-width: 500px;
+}
+
+.container-label {
+    display: flex;
+    flex-direction: column;
+}
+
+.container-label label {
+    margin-top: 20px;
+    margin-bottom: 10px;
+;
+}
+
+input[type="text"] {
+    background-color: white;
+    border: none;
+    height: 40px;
+    border-radius: 10px;
+}
+
+.butoane {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    background-image: linear-gradient(to right, rgb(3, 252, 136), rgb(2, 122, 90));
+    color: white;
+    border: none;
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+label {
+    color: #7e8ba3;
+    font-size: 1.2rem;
+}
+
+@media(min-width:720px) {
+    .container-form {
+        grid-area: form;
+    }
+    .drag-area {
+        grid-area: drag;
+    }
+    .butoane {
+        grid-area: butoane;
+    }
+}
+
+.span_erori {
+    color: red;
+}
+
+.cancel {
+    margin-top: 10px;
+}

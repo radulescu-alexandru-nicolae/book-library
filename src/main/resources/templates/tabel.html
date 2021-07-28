@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" th:href="@{/tabel.css}">
+  <title>Document</title>
+</head>
+<body>
+<section class="first-section">
+  <table>
+    <thead>
+    <tr>
+      <th scope="col" class="order">
+        <h3>Order</h3>
+      </th>
+      <th scope="col" class="title">
+        <h3>Title</h3>
+      </th>
+      <th scope="col" class="type">
+        <h3>Type</h3>
+      </th>
+      <th scope="col" class="price">
+        <h3>Author</h3>
+      </th>
+    </tr>
+    </thead>
+    <tbody th:each="book:${lista}">
+    <tr>
+      <th>
+        <div class="order">
+          <input type="checkbox">
+        </div>
+      </th>
+      <td>
+        <a th:href="@{'/books?id='+ ${book.getId()}}" th:text="${book.getTitle()}">asdsa</a>
+        </a>
+      </td>
+      <td>
+        <h3 th:text="${book.getType()}">Fictiune</h3>
+      </td>
+      <td>
+        <h3 th:text="${book.getAuthor()}">Mihai Eminescu</h3>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+<section class="butoane">
+  <a href=""><button>Inchiriaza</button></a>
+  <a href="/books/new"><button>Create new Book</button>
+  </a>
+  <a href=""><button>Cancel</button></a>
+</section>
+<script src="function.js"></script>
+</body>
+
+</html>

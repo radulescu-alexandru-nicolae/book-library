@@ -1,0 +1,38 @@
+body {
+    background-color: #354152;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    row-gap: 30px;
+}
+
+img {
+    height: 200px;
+}
+
+a {
+    background-image: linear-gradient(to right, rgb(3, 252, 136), rgb(2, 122, 90));
+    color: white;
+    border: none;
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+input[type="text"] {
+    background-color: rgb(214, 214, 214);
+    border: none;
+    height: 50px;
+    width: 200px;
+}

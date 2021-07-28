@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" th:href="@{/addBook.css}">
+  <title>Document</title>
+</head>
+<body>
+<header>
+  <h1>New Book</h1>
+</header>
+<main>
+  <div class="container-form">
+    <form th:method="POST" th:object="${book}" th:action="@{/books/new}">
+                <span th:if="${#fields.hasAnyErrors()}" class="span_erori">
+        <h2 class="errot">Ooops</h2>
+        <ul class="error">
+          <li th:if="${#fields.hasErrors('title')}" th:erors="*{title}">Title is required</li>
+          <li th:if="${#fields.hasErrors('author')}" th:erors="*{author}">Author is required</li>
+          <li th:if="${#fields.hasErrors('type')}" th:erors="*{type}">Type is required</li>
+        </ul>
+      </span>
+      <div class="container-label">
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" th:field="*{title}">
+
+        <label for="author">Author</label>
+        <input type="text" id="author" name="author" th:field="*{author}">
+
+        <label for="type">Type</label>
+        <input type="text" id="type" name="type" th:field="*{type}">
+      </div>
+      <div class="butoane">
+        <button type="submit" class="create">Add Book</button>
+      </div>
+    </form>
+    <a href="/"><button class="cancel">Cancel</button></a>
+
+  </div>
+</main>
+<script th:src="@{/addBook.js}"></script>
+</body>
+
+</html>

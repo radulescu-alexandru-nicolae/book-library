@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/updateBook.css}">
+    <title>Document</title>
+<body>
+<header>
+    <h1>Update Book</h1>
+</header>
+<main>
+    <div class="container-form">
+        <form  th:method="post" th:action="@{/books/{id}(id = ${book.get().getId()})}">
+                <span   class="span_erori">
+                    <ul class="error">
+                      <li  class="title">Title is required</li>
+                      <li class="author">Author is required</li>
+                      <li  class="type">Type is required</li>
+                    </ul>
+                  </span>
+            <div class="container-label verifed">
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title" th:value="${book.get().getTitle()}">
+
+                <label for="author">Author</label>
+                <input type="text" id="author" name="author" th:value="${book.get().getAuthor()}">
+
+                <label for="type">Type</label>
+                <input type="text" id="type" name="type" th:value="${book.get().getType()}">
+            </div>
+            <div class="aux1">
+                <button type="submit" class="create">Update Book</button>
+            </div>
+        </form>
+
+
+        <form th:action="@{/books/{id}/delete (id=${book.get().getId()})}" th:method="POST" onsubmit="return confirm('Do you realy want to delete this book');">
+
+
+            <a href="/" >Cancel</a>
+
+            <input type="submit" value="Delete Book">
+=
+        </form>
+
+
+
+    </div>
+</main>
+<script th:src="@{/updateBook.js}"></script>
+</body>
+
+</html>
